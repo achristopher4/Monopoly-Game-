@@ -27,6 +27,27 @@ mathList[7] = "seven"
 mathList[8] = "eight"
 mathList[9] = "nine"
 mathList[10] = "ten"
+mathList[11] = "eleven"
+mathList[12] = "twevle"
+mathList[13] = "thirteen"
+mathList[14] = "fourteen"
+mathList[15] = "fifteen"
+mathList[16] = "sixteen"
+mathList[17] = "seventeen"
+mathList[18] = "eighteen"
+mathList[19] = "nineteen"
+mathList[20] = "twenty"
+mathList[21] = "twenty-one"
+mathList[22] = "twenty-two"
+mathList[23] = "twenty-three"
+mathList[24] = "twenty-four"
+mathList[25] = "twenty-five"
+mathList[26] = "twenty-six"
+mathList[27] = "twenty-seven"
+mathList[28] = "twenty-eight"
+mathList[29] = "twenty-nine"
+mathList[30] = "thrity"
+
 
 #Extra credit HW3
 while True:
@@ -81,20 +102,62 @@ letterHousingOne = mathList[housingOne]
 letterHousingTwo = mathList[housingTwo]
 
 #Alogrithm HW3
+finalValueHousing = housingOne + housingTwo
 
-if groupOne == 0 and groupTwo == 0:
+finalValueGrouping = groupOne + groupTwo
+letterFinalValueGrouping = mathList[finalValueGrouping]
+
+if (askMoney//costIndex) == 0:
     print("You cannot afford even one house.")
-elif groupTwo == 0 or housingTwo == 0:
-    print(f'There are {letterCostIndex} properties and each house costs {costIndex}')
-    print(f"You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have {letterHousingOne}")
-elif groupOne == 0 or housingOne == 0:
-    print(f'There are {letterCostIndex} properties and each house costs {costIndex}')
-    print(f"You can build {letterHousingAmount} house(s) -- {letterGroupTwo} will have {letterHousingTwo}")
-elif amountOfHouses > 0:
-    print(f'There are {letterCostIndex} properties and each house costs {costIndex}')
-    print(f"You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have {letterHousingOne} and {letterGroupTwo} will have {letterHousingTwo}")
+elif groupOne == 0:
+    if housingTwo < 5: 
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupTwo} will have {letterHousingTwo}')
+    elif housingTwo <= 5:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupTwo} will have a hotel')
+    else:
+        print("Error: 1")
+elif groupTwo == 0:
+    if housingOne < 5:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have {letterHousingOne}')
+    elif housingOne <=5:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have a hotel')
+    else:
+        print("Error: 2")
+elif housingOne == 0:
+    if housingTwo < 5: 
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupTwo} will have {letterHousingTwo}')
+    elif housingTwo <= 5:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupTwo} will have a hotel')
+    else:
+        print("Error: 3")
+elif housingTwo == 0:
+    if housingOne < 5:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have {letterHousingOne}')
+    elif housingOne <=5:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have a hotel')
+    else:
+        print("Error: 4")
+elif finalValueHousing != 0:
+    if housingOne >= 5:
+        if housingTwo < 5:
+            print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have a hotel and {letterGroupTwo} will have {letterHousingTwo}')
+        elif housingTwo >= 5:
+            print(f'{letterFinalValueGrouping} will have a hotel')
+        else:
+            print("Error: 6")
+    elif housingTwo >= 5:
+        if housingOne < 5:
+            print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have {letterHousingOne} and {letterGroupTwo} will have a hotel')
+        elif housingTwo >= 5:
+            print(f'{letterFinalValueGrouping} will have a hotel')
+        else:
+            print("Error: 7")
+    elif finalValueHousing > 0:
+        print(f'You can build {letterHousingAmount} house(s) -- {letterGroupOne} will have {letterHousingOne} and {letterGroupTwo} will have {letterHousingTwo}')
+    else:
+        print("Error: 8")
 else:
-    print("Error")
+    print("Error: 9")
 
 
 
